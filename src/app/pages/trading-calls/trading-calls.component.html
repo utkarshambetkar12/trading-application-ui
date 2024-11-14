@@ -1,0 +1,52 @@
+<div class="main-container">
+  <div class="view-selector" *ngIf="views.length > 0">
+    <div *ngFor="let view of views">
+      <button
+        class="view-button"
+        [ngClass]="{ 'selected-view': view === selectedView }"
+        (click)="onViewSelected(view)"
+      >
+        {{ view }}
+      </button>
+    </div>
+  </div>
+  <div class="date-selector" *ngIf="dateArray.length > 0">
+    <div class="selected-date" (click)="onDateSelectorClicked()">
+      {{ selectedDate }}
+      <div class="chevron" [ngClass]="{ up: dateSelectorActivated }"></div>
+    </div>
+    <div class="dates" *ngIf="dateSelectorActivated">
+      <div
+        class="non-selected-dates"
+        *ngFor="let d of dateArray"
+        (click)="onDateSelected(d)"
+      >
+        {{ d }}
+      </div>
+    </div>
+
+    <div class="strategies">
+      <ng-container
+        *ngIf="transformedData[selectedView][selectedDate]; else noData"
+      >
+        <div
+          class="strategy"
+          *ngFor="let strategy of transformedData[selectedView][selectedDate]"
+        >
+          {{ strategy.name }}
+          <div class="strategy-count">
+            <span class="grey-dot"></span>
+            {{ strategy.count }}
+            {{ strategy.count > 1 ? "Strategies" : "Strategy" }}
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #noData>
+        <div class="empty-state">
+          <span>There are no strategies for </span>
+          <span class="date">{{ selectedDate }}</span>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
