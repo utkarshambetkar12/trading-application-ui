@@ -1,4 +1,6 @@
-# TradingApplicationUi
+# Trading Application User Interface
+
+[Live Demo](https://trading-application-ui.web.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
