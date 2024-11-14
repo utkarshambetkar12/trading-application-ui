@@ -13,7 +13,7 @@
     width: 100%;
     // Media query for mobile
     @media (max-width: 600px) {
-      max-width: 380px; // Set width for mobile
+      width: 90%; // Set width for mobile
     }
     max-width: 400px;
     border-radius: 8px;
@@ -40,14 +40,17 @@
     flex-direction: column;
     gap: 12px;
     align-items: center;
+    max-width: 400px;
+    @media (max-width: 600px) {
+      width: 90%; // Set width for mobile
+    }
+    width: 100%;
     .selected-date {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 400px;
-      @media (max-width: 600px) {
-        width: 380px; // Set width for mobile
-      }
+
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #525761;
@@ -77,15 +80,18 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
+      width: 100%;
+      @media (max-width: 600px) {
+        width: 90%; // Set width for mobile
+      }
+      max-width: 380px;
       .non-selected-dates {
+        width: 100%;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 380px;
-        @media (max-width: 600px) {
-          width: 300px; // Set width for mobile
-        }
+
         padding: 12px;
         border-radius: 8px;
         border: 1px solid #525761;
@@ -100,14 +106,15 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    max-width: 400px;
+
+    width: 100%;
     .strategy {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 400px;
-      @media (max-width: 600px) {
-        width: 380px; // Set width for mobile
-      }
+
       padding: 12px;
       border-radius: 8px;
       border: 1px solid #525761;
